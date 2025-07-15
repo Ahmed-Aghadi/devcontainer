@@ -59,7 +59,9 @@
         "GitHub.copilot",
         "GitHub.copilot-chat",
         "esbenp.prettier-vscode",
-        "ritwickdey.LiveServer"
+        "ritwickdey.LiveServer",
+        "rust-lang.rust-analyzer",
+        "golang.Go"
       ],
       "settings": {
         // Killswitch for automated tasks

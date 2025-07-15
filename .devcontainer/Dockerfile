@@ -42,6 +42,9 @@ SHELL ["/usr/bin/fish", "-c"]
 # Install starship theme
 RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
+# Copy the starship config file
+COPY ./starship.toml ~/.config/starship.toml
+
 # Config starship for fish ( https://starship.rs/#fish )
 RUN echo 'starship init fish | source' >> $HOME/.config/fish/config.fish
 

@@ -224,7 +224,8 @@ RUN uv tool install semgrep
 RUN uv tool install halmos
 RUN uv tool install just-solve-it
 RUN uv tool install solc-select
-RUN solc-select install 0.4.26 0.5.17 0.6.12 0.7.6 0.8.10 latest && solc-select use latest
+# RUN solc-select install 0.4.26 0.5.17 0.6.12 0.7.6 0.8.10 latest && solc-select use latest
+RUN solc-select install latest && solc-select use latest
 
 # Fetch and install setups
 ## ityfuzz

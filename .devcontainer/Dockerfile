@@ -322,6 +322,10 @@ RUN echo -e "\nfish_add_path -a /home/vscode/.local/share/solana/install/active_
 RUN cargo install --git https://github.com/coral-xyz/anchor avm --force
 RUN avm install latest
 RUN avm use latest
+
+# Earlier it used to be in /home/vscode/.cargo/bin
+RUN echo -e "\nfish_add_path -a /home/vscode/.avm/bin\n" >> ~/.config/fish/config.fish
+
 # Geting error like this `version `GLIBC_2.38' not found` while running `anchor --version`. The exact error msgs are these two lines:
 # /home/vscode/.avm/bin/anchor-0.31.0: /lib/x86_64-linux-gnu/libm.so.6: version `GLIBC_2.38' not found (required by /home/vscode/.avm/bin/anchor-0.31.0)
 # /home/vscode/.avm/bin/anchor-0.31.0: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.39' not found (required by /home/vscode/.avm/bin/anchor-0.31.0)

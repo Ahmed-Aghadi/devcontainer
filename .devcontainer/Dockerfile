@@ -22,8 +22,9 @@ USER root
 COPY --from=python-base /usr/local /usr/local
 
 # Super basic stuff to get everything started
+# # libudev is required while running the command: `avm install latest` else it throws error that `The system library `libudev` required by crate `hidapi` was not found.`
 RUN apt-get update -y && apt-get install -y \
-    fish zsh python3-dev libpython3-dev build-essential vim curl git sudo pkg-config \
+    fish zsh python3-dev libpython3-dev build-essential vim curl git sudo pkg-config libudev-dev \
     --no-install-recommends
 
 # # The base container usually has a “vscode” user. If not, create one here.
